@@ -15,7 +15,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@eval/crud/shell": ["libs/crud/shell/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

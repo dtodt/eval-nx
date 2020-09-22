@@ -1,6 +1,51 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "crud-shell": {
+      "projectType": "library",
+      "root": "libs/crud/shell",
+      "sourceRoot": "libs/crud/shell/src",
+      "prefix": "eval",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/crud/shell/tsconfig.lib.json",
+            "project": "libs/crud/shell/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/crud/shell/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/crud/shell/tsconfig.lib.json",
+              "libs/crud/shell/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/crud/shell/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/crud/shell/jest.config.js",
+            "tsConfig": "libs/crud/shell/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/crud/shell/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    }
+  },
   "cli": {
     "defaultCollection": "@nrwl/angular"
   },
@@ -12,5 +57,6 @@
     "@nrwl/angular:library": {
       "unitTestRunner": "jest"
     }
-  }
+  },
+  "defaultProject": "crud-shell"
 }
