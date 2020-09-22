@@ -33,9 +33,7 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/crud/shell/jest.config.js",
-            "tsConfig": "libs/crud/shell/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/crud/shell/src/test-setup.ts"
+            "passWithNoTests": true
           }
         }
       },
@@ -65,9 +63,7 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/crud/list/jest.config.js",
-            "tsConfig": "libs/crud/list/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/crud/list/src/test-setup.ts"
+            "passWithNoTests": true
           }
         }
       },

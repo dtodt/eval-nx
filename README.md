@@ -14,25 +14,19 @@ ng add @nrwl/angular@^9.7.0
 ng g @nrwl/angular:lib shell --directory=crud --style=scss --publishable --routing=true --lazy=true
 ```
 
-### 1st problem on run `ng build crud-shell --prod`
-
-Result:
-
-```shell
-ERROR: Error during template compile of 'CrudShellModule'
-  Function calls are not supported in decorators but 'RouterModule' was called.
-
-An unhandled exception occurred: Error during template compile of 'CrudShellModule'
-  Function calls are not supported in decorators but 'RouterModule' was called.
-```
-
 ## Generating the shell library
 
 ```shell
 ng g @nrwl/angular:lib list --directory=crud --style=scss --routing=true --lazy=true --parentModule=libs/crud/shell/src/lib/crud-shell.module.ts
 ```
 
-### 2nd problem on run `ng build crud-shell --prod`
+## Upgrading from v9 to v10
+
+```shell
+yarn update --force
+```
+
+### Problem on run `ng build crud-shell --prod`
 
 Result:
 
