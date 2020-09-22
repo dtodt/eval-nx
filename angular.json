@@ -44,6 +44,38 @@
           "style": "scss"
         }
       }
+    },
+    "crud-list": {
+      "projectType": "library",
+      "root": "libs/crud/list",
+      "sourceRoot": "libs/crud/list/src",
+      "prefix": "eval",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/crud/list/tsconfig.lib.json",
+              "libs/crud/list/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/crud/list/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/crud/list/jest.config.js",
+            "tsConfig": "libs/crud/list/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/crud/list/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

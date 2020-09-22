@@ -7,13 +7,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
 
     RouterModule.forChild([
-      {
-        path: 'crud-list',
-        loadChildren: () =>
-          import('@eval/crud/list').then((module) => module.CrudListModule),
-      },
       /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
     ]),
   ],
 })
-export class CrudShellModule {}
+export class CrudListModule {}

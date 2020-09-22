@@ -24,6 +24,9 @@
   "projects": {
     "crud-shell": {
       "tags": []
+    },
+    "crud-list": {
+      "tags": []
     }
   }
 }
